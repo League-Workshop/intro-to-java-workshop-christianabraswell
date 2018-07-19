@@ -26,8 +26,12 @@ public class QuizGame {
 				if (question.equals("4")) {
 					score+=1;
 				}
-				String score=JOptionPane.showMessageDialog(null, "Your score is" + score);
-				}
+				JOptionPane.showMessageDialog(null, "Your score is " + score + ", Congratulations! You are the...");
+				
+	if (score==4) {
+		JOptionPane.showMessageDialog(null, "WINNER!!!!!!");
+	}
+	}
 		// 4.  if the user's answer is correct
 		
 		// -- add one to their score 
@@ -37,5 +41,5 @@ public class QuizGame {
 		// 6.  After all the questions have been asked, print the user's score 
 	
 		
-	}
+}
 

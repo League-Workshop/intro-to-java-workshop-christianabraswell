@@ -16,37 +16,69 @@ import org.jointheleague.graphical.robot.Robot;
 public class RobotTreasureHunt implements KeyEventDispatcher{
 
 	// 1. Create a new mini robot (type "mini" inside the parentheses)
+	Robot keke = new Robot("mini");
 	
 	private void goUp() throws InterruptedException {
 		// 2. Make the robot move up the screen (use setAngle(angle) and microMove(distance))
+		keke.setAngle(0);
+		keke.microMove(5);
 		
 	}
 
 	private void goDown() throws InterruptedException{
 		// 3. make the robot move down the screen (use setAngle(angle) and microMove(distance))
-		
+		keke.setAngle(180);
+		keke.microMove(5);
 	}
 
 	private void turnLeft() throws InterruptedException{
 		// 4. Make the robot turn to the left (use setAngle(angle) and microMove(distance))
-
+keke.setAngle(-90);
+keke.microMove(5);
 	}
 
 	private void turnRight() throws InterruptedException{
 		// 5. make the robot turn to the right (use setAngle(angle) and microMove(distance))
-		
+		keke.setAngle(90);
+		keke.microMove(5);
 	}
 
 	private void spaceBarWasPressed() {
 
 		// 5. Change ROBOTNAME below to match the name of the robot you created in step 1.  THEN, remove the slashes at the beginning of the next two lines
-		//int robotXLocation = ROBOTNAME.getX();
-		//int robotYLocation = ROBOTNAME.getY();
+		int robotXLocation = keke.getX();
+		int robotYLocation = keke.getY();
 		
 		// 6. Print the robotXLocation and robotYLocation variables to the console 
+		System.out.println(robotXLocation + " , " + robotYLocation);
 		
 		// 7. If robot is at same location as the little girl
 		//      --make a pop-up tell the robot where to go next
+		if (robotXLocation==715&&robotYLocation==410) {
+			JOptionPane.showMessageDialog(null, "Go to the parrots for the magic feather.");
+			
+		}
+		if (robotXLocation==620&&robotYLocation==140) {
+			JOptionPane.showMessageDialog(null, "You've got the magic feather! Now go to the skull for a mystical tooth!");
+		}
+		if (robotXLocation==230&&robotYLocation==140) {
+			JOptionPane.showMessageDialog(null, "Now you've got the tooth and feather, let's make a stop to the pond for some fish, I am hungry!");
+		}
+		
+		if (robotXLocation==470&&robotYLocation==550) {
+			JOptionPane.showMessageDialog(null, "Go to the lost bottle for more clues");
+		}
+		
+		if (robotXLocation==410&&robotYLocation==510) {
+			JOptionPane.showMessageDialog(null, "You will need the map for your final destination, take this bottle to help with access for the chest");
+		}
+		
+		if (robotXLocation==265&&robotYLocation==370) {
+			JOptionPane.showMessageDialog(null, "X marks the spot, go to the door and exchange all your treasure for the chest! ");
+		}
+		if (robotXLocation==280&&robotYLocation==215) {
+			JOptionPane.showMessageDialog(null, "Hooray!!! You found the door to the chest!!!");
+		}
 		
 		// 8. Give the user subsequent clues at different locations on the image
 		// (pirate robot, swamp, parrots, etc.)
